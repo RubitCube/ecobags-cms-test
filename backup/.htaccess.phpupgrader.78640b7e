@@ -1,0 +1,77 @@
+# Enable short tags
+php_flag short_open_tag on
+
+# Show errors for debugging
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Turn Rewrite Engine On
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} shamsnaturals\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.\*)$ https://shamsnaturals.com/$1 [R,L]
+
+RewriteRule ^ShamsNaturals-Home$ index.php [NC,L]
+
+RewriteRule ^Products/([0-9]+)/([0-9]+)$ products.php?categoryno=$1&subcategoryno=$2 [NC,L]
+
+RewriteRule ^SubProducts/([0-9]+)/([0-9]+)$ subcategoryproducts.php?categoryno=$1&subcategoryno=$2 [NC,L]
+
+RewriteRule ^Productenquiry/([0-9]+)$ productenquiry.php?productno=$1 [NC,L]
+
+RewriteRule ^Productdetails/([0-9]+)$ productdetails.php?productno=$1 [NC,L]
+
+RewriteRule ^NewarrivalProducts$ newarrivals.php [NC,L]
+RewriteRule ^ShamsNaturalsCompany-Profile$ aboutus.php [NC,L]
+RewriteRule ^ContactShamsNaturals$ contactus.php [NC,L]
+RewriteRule ^DealerSelector$ dealerselector.php [NC,L]
+RewriteRule ^ShamsNaturalsVideos$ videos.php [NC,L]
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/x-font
+AddOutputFilterByType DEFLATE application/x-font-truetype
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE application/x-font-otf
+AddOutputFilterByType DEFLATE application/x-font-opentype
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE font/ttf
+AddOutputFilterByType DEFLATE font/otf
+AddOutputFilterByType DEFLATE font/opentype
+# For Olders Browsers Which Can't Handle Compression
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_include handler ^cgi-script$
+</ifModule>
+
+# PHP Handler
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+
+
+RewriteCond %{HTTP_HOST} ^shamsnaturals\.com\.shamsbags\.com$
+RewriteRule ^(.*)$ "https\:\/\/shamsnaturals\.com\/$1" [R=301,L]

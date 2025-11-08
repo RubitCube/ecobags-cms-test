@@ -1,0 +1,390 @@
+<?include("iconnect.php")?>
+<?include("iproductcategoryflag.php")?>
+<?
+$page=$_REQUEST["page"];
+$pname=$_REQUEST["pname"];
+$productcategory_wherecondition = "categoryno=$categoryno and subcategoryno=$subcategoryno and subcategory2no=$subcategory2no and subcategory3no=$subcategory3no and subcategory4no=$subcategory4no and subcategory5no=$subcategory5no and subcategory6no=$subcategory6no";
+$productcategory_tcount1=$obj->totalrecords_condition('productcategory', '*', $productcategory_wherecondition);
+foreach($productcategory_tcount1 as $productcategory_row ){
+ $productcategory_tcount=$productcategory_row['count(*)'];
+}
+?>
+<?
+/***********category youarein with product page****************************/
+if($categoryno<>0 ){
+if($pname=="category" && $page=="category.php" || $page=="product.php" || $page=="subcategory2.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2=""; $youarein2link="";$youarein3=""; $youarein3link="";
+ $youarein4=""; $youarein4link="";$youarein5=""; $youarein5link="";$youarein6=""; $youarein6link="";
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname;
+ }
+}
+
+if($categoryno<>0 && $subcategoryno<>0){
+if($pname=="category" && $page=="product.php" || $page=="subcategory.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2="Sub Category Level 1"; $youarein2link="subcategory.php?categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein3=""; $youarein3link="";
+ $youarein4=""; $youarein4link="";$youarein5=""; $youarein5link="";$youarein6=""; $youarein6link="";
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname." - ".$master_subcategory;
+ }
+}
+
+if($categoryno<>0 && $subcategoryno<>0 && $subcategory2no<>0){
+if($pname=="category" && $page=="product.php" || $page=="subcategory2.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2="Sub Category Level 1"; $youarein2link="subcategory.php?categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein3="Sub Category Level 2"; $youarein3link="subcategory2.php?subcategoryno=".$subcategoryno."&categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein4=""; $youarein4link="";$youarein5=""; $youarein5link="";$youarein6=""; $youarein6link="";
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname." - ".$master_subcategory." - ".$master_subcategory2;
+ }
+}
+
+if($categoryno<>0 && $subcategoryno<>0 && $subcategory2no<>0 && $subcategory3no<>0){
+if($pname=="category" && $page=="product.php" || $page=="subcategory2.php" || $page=="subcategory3.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2="Sub Category Level 1"; $youarein2link="subcategory.php?categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein3="Sub Category Level 2"; $youarein3link="subcategory2.php?subcategoryno=".$subcategoryno."&categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein4="Sub Category Level 3"; $youarein4link="subcategory3.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno;
+ $youarein5=""; $youarein5link="";$youarein6=""; $youarein6link="";
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname." - ".$master_subcategory." - ".$master_subcategory2." - ".$master_subcategory3;
+ }
+}
+
+if($categoryno<>0 && $subcategoryno<>0 && $subcategory2no<>0 && $subcategory3no<>0 && $subcategory4no<>0){
+if($pname=="category" && $page=="product.php" || $page=="subcategory2.php" || $page=="subcategory3.php"  || $page=="subcategory4.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2="Sub Category Level 1"; $youarein2link="subcategory.php?categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein3="Sub Category Level 2"; $youarein3link="subcategory2.php?subcategoryno=".$subcategoryno."&categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein4="Sub Category Level 3"; $youarein4link="subcategory3.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno;
+ $youarein5="Sub Category Level 4"; $youarein5link="subcategory4.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno."&subcategory3no=".$subcategory3no; 
+ $youarein6=""; $youarein6link="";
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname." - ".$master_subcategory." - ".$master_subcategory2." - ".$master_subcategory3." - ".$master_subcategory4;
+ }
+}
+
+if($categoryno<>0 && $subcategoryno<>0 && $subcategory2no<>0 && $subcategory3no<>0 && $subcategory4no<>0 && $subcategory5no<>0){
+if($pname=="category" && $page=="product.php" || $page=="subcategory2.php" || $page=="subcategory3.php"  || $page=="subcategory4.php"  || $page=="subcategory5.php" || $page=="viewproduct.php" || $page=="setpriorityproduct.php" || $page=="setpriorityproductphotos.php" || $page=="setpriorityproductpdf.php" || $page=="setpriorityproductcolors.php" || $page=="setpriorityproductdetails.php"){
+ $pname="category"; $pnamesub="";
+ $youarein1="Category"; $youarein1link="category.php?categoryno=".$categoryno."&page=".$page."&pname=".$pname;
+ $youarein2="Sub Category Level 1"; $youarein2link="subcategory.php?categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein3="Sub Category Level 2"; $youarein3link="subcategory2.php?subcategoryno=".$subcategoryno."&categoryno=".$categoryno."&brandsno=".$brandsno."&page=".$page."&pname=".$pname;
+ $youarein4="Sub Category Level 3"; $youarein4link="subcategory3.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno;
+ $youarein5="Sub Category Level 4"; $youarein5link="subcategory4.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno."&subcategory3no=".$subcategory3no; 
+ $youarein6="Sub Category Level 5"; $youarein6link="subcategory5.php?categoryno=".$categoryno."&subcategoryno=".$subcategoryno."&subcategory2no=".$subcategory2no."&page=".$page."&pname=".$pname."&brandsno=".$brandsno."&subcategory3no=".$subcategory3no."&subcategory4no=".$subcategory4no; 
+ $youarein7=""; $youarein7link="";$youarein8="";$youarein8link="";$youarein9=""; $youarein9link="";
+ $mainheading="List Of  Full Product : ".$master_categoryname." - ".$master_subcategory." - ".$master_subcategory2." - ".$master_subcategory3." - ".$master_subcategory4." - ".$master_subcategory5;
+ }
+}
+/***********category youarein with viewproduct page****************************/
+
+
+$youareinname="Product";
+$linkheading="List Of  Full Product :";
+$subheading="";
+$bodyheading="List of all Full Product";
+$mainheadingdesc="";
+$addicon="Yes"; $pdficon="No"; $excelicon="No"; $modifyicon="Yes"; $modifytopicon="No"; $deleteicon="No";$priorityproducticon="Yes";
+$linkname="product";
+$linknamepriority="priorityproduct";
+$linkquery1="";$linkquery2="";$linkquery3="";$linkquery4="";$linkquery5="";$linkquery6="";
+?>
+<style>
+ .img-fluid-product {
+    max-width: 100%!important;
+    height: 90px!important;
+}
+</style>
+<?include ("itopheaddashboard.php")?> 
+
+<!--***************************************PRODUCT VIEW   **********************************************************-->
+ <!--***************************************PRODUCT VIEW   **********************************************************-->
+ <?
+ //store product in an array to display in a datacable for pagination and search***
+  $prodcyarray = array();	
+  $productcategory_where="categoryno=$categoryno and subcategoryno=$subcategoryno and subcategory2no=$subcategory2no and subcategory3no=$subcategory3no and subcategory4no=$subcategory4no and subcategory5no=$subcategory5no and subcategory6no=$subcategory6no  ORDER BY productpriority ASC";
+   $productcategory_result = $obj->select_all_values('productcategory', $productcategory_where,'');      
+    foreach($productcategory_result as $productcategory_row)
+	{ 
+ //foreach ($obj->execute($productcategory_sql) as $productcategory_row) 
+ // {
+    $productno =$productcategory_row["productno"];
+    $prodcyarray[] = $productno;		
+  }
+ ?> 
+			
+<div class="table-wrappers">
+<? 
+  $arylength=count($prodcyarray);
+  $r=0;
+//#########limit 4 cases this idea not work .for this
+if($arylength<5){
+	$productrowless_result = $productrowless_result2 = '';
+	$productrowless_result.='<table id="datatable1" class="table display table-responsive" style="border:none;"><thead style="border:none;"><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th></thead><tbody><tr style="border:none;">';
+  //###################4 divs show##########################
+  foreach($prodcyarray as $value){
+	$productno=$value;
+	$product_where="productno=$productno ";
+	$product_orderby="ORDER BY productpriority ASC";
+	$product_result=$obj->select_all_values("product",$product_where, $product_orderby);
+	$count=0;
+	foreach($product_result as $product_row){ 
+	 $count++;
+	 $productno =$product_row["productno"];
+	 $pname1 =$product_row["pname"];
+	 $brandsno =$product_row["brandsno"];
+	 $pstatus =$product_row["pstatus"];
+	
+	 $productdetails_where="productno=$productno ";
+	$productdetails_orderby="ORDER BY productdetailsno  asc LIMIT 1";
+	$productdetails_result = $obj->select_all_values('productdetails', $productdetails_where, $productdetails_orderby);
+	foreach($productdetails_result as $productdetails_row){
+	 $productdetailsno =$productdetails_row["productdetailsno"];
+	 $productname =$productdetails_row["productname"];
+	 $productcode=$productdetails_row["productcode"];
+	 $featuredproduct=$productdetails_row["featuredproduct"];
+	}
+
+
+	  $productcolors_where="productno =$productno order by priority asc LIMIT 1";
+	  $productcolors_result = $obj->select_all_values('productcolors', $productcolors_where,'');
+	  foreach($productcolors_result as $productcolors_row){
+	   $productcolorsno = $productcolors_row["productcolorsno"];
+	   $colorname = $productcolors_row["colorname"];
+	   $colorcode = $productcolors_row["colorcode"];
+	  }
+	 $productimages_wherecondition = "productno =$productno and productcolorsno=$productcolorsno";
+	  $productimages_tcount1=$obj->totalrecords_condition('productimages', '*', $productimages_wherecondition);
+	  foreach($productimages_tcount1 as $productimages_row ){
+	   $productimages_tcount=$productimages_row['count(*)'];
+	  }
+	  if ($productimages_tcount<>0) { 
+		$productimages_where="productno=$productno and productcolorsno=$productcolorsno";
+		 $productimages_orderby="ORDER BY priority  asc LIMIT 1";
+		 $productimages_result = $obj->select_all_values('productimages', $productimages_where, $productimages_orderby);
+		 foreach($productimages_result as $productimages_row){
+		  $productimagesno =$productimages_row["productimagesno"];
+		 $ppimg=$productimages_row["pimg"];
+		 }
+	  }
+	 
+		 
+	$productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;width:20%;">
+   <a href="viewproduct.php?productno='.$productno.'&categoryno='.$categoryno.'&subcategoryno='.$subcategoryno.'&subcategory2no='.$subcategory2no.'&subcategory3no='.$subcategory3no.'&subcategory4no='.$subcategory4no.'&subcategory5no='.$subcategory5no.'&subcategory6no='.$subcategory6no.'&pname='.$pname.'&page='.$fname.'">
+     <div class="col-12">';
+	  if ($pstatus<>"Active") {
+	  $productrowless_result2.= ' <div class="card" style="background-color:#ffdddd">
+	  <div class="card-header pb-0" style="border-bottom:none;background-color:#ffdddd">';
+	  }
+	  else
+	  {
+		   $productrowless_result2.= ' <div class="card" >
+		   <div class="card-header pb-0" style="border-bottom:none;background-color:#FFFFFF">';
+	  }
+	     $productrowless_result2.= '
+		 <div class="row">
+		  <div class="col-9 p1-0 pt-0">
+		   <h4 class="tx-sm-13" style="color:#0866C6;font-size:14px;">'.$pname1.'</h4>';	
+		     if($productcode<>""){
+            $productrowless_result2.= '<small class="text-muted">'.$productcode.'</small>'; 
+			}	
+	      $productrowless_result2.= '</div>
+	     </div>
+		 <hr>
+	    </div>
+		<div class="card-body pt-0">';
+		if ($productimages_tcount<>0) {  
+			$productrowless_result2.= '<div class="row"><img src="../productimages/'.$ppimg.'" class="img-fluid mx-auto" alt="'.$pname1.'"  title="'.$pname1.'"/></div>';
+	      } 
+		  else{
+			   $productrowless_result2.= '<div class="row"><img src="img/noimage.jpg" class="img-fluid mx-auto" alt="'.$pname1.'"  title="'.$pname1.'"/></div>';
+		  }
+		   $productrowless_result2.= '<hr><div class="row orderbottom">
+		    <div class="col-3 "><i class="fas fa-receipt" title="View Product" ></i></div>
+		   
+		    <div class="col-9 text-right noproduct">';
+			 $orders_wherecondition = "productno =$productno";
+			 $orders_tcount1=$obj->totalrecords_condition('orders', '*', $orders_wherecondition);
+			 foreach($orders_tcount1 as $orders_row ){
+			  $orders_tcount=$orders_row['count(*)'];
+			 } 
+			  if ($orders_tcount<>0) {
+		   $productrowless_result2.= '<h6 class="tx-success tx-13 "> '.$orders_tcount.' people ordered this</h6>';
+		  }
+		 else  { 
+			$productrowless_result2.= '<h6 class="tx-danger tx-13  ">No Orders</h6>';
+			 } 
+			$productrowless_result2.= '</div>
+			</div>
+		   ';
+		$productrowless_result2.= '</div>
+	   </div>
+	  </div>
+	  </a>
+	  </td>';
+  }
+  }
+  if($arylength==1){	  
+	  $productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td>';
+  }
+  if($arylength==2){	  
+	  $productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td>';
+  }
+  if($arylength==3){	  
+	  $productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td><td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" ></div></td>';
+  }
+  if($arylength==4){	  
+	  $productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;width:20%;"><div class="col-12" ></div></td>';
+  }  
+  $productrowless_result2.= '<td style="background-color:#E9ECEF;border:none;;width:20%;"><div class="col-12" >&nbsp;</div></td></tr></tbody></table>';
+  $productrowless_result.=$productrowless_result2;
+   echo $productrowless_result;
+  //###################4 divs show##########################
+}
+else{
+	//#####################5 divs show#########################
+	  $productrow_result = $productrow_result2 = '';
+	  $arylength=count($prodcyarray);
+	  for ($c = $arylength; $c % 5 != 0; $c++) {
+	    $prodcyarray[str_repeat("\n", $c % 5)] = '';
+	  }
+	  $productrow_result.='<table id="datatable1" class="table display table-responsive" style="border:none;"><thead style="border:none;"><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th><th style="border:none;">&nbsp;</th></thead><tbody><tr>';
+	  $i=1;
+	  foreach($prodcyarray as $value){
+		$productno=$value;
+		if($productno==""){$productno=0;$pname1 ="";}
+		$product_where="productno=$productno ";
+	    $product_orderby="ORDER BY productpriority ASC";
+		$product_result=$obj->select_all_values("product",$product_where, $product_orderby);
+		 foreach($product_result as $product_row){
+		$productno =$product_row["productno"];
+		 $pname1 =$product_row["pname"];
+		 $brandsno =$product_row["brandsno"];
+		 $pstatus =$product_row["pstatus"];
+		 }		
+		 
+		$productdetails_where="productno=$productno ";
+		$productdetails_orderby="ORDER BY productdetailsno  asc LIMIT 1";
+		$productdetails_result = $obj->select_all_values('productdetails', $productdetails_where, $productdetails_orderby);
+		foreach($productdetails_result as $productdetails_row){
+		 $productdetailsno =$productdetails_row["productdetailsno"];
+		 $productname =$productdetails_row["productname"];
+		$pcode=$productdetails_row["pcode"];
+		
+		 $featuredproduct=$productdetails_row["featuredproduct"];
+		}
+		
+	$productcolors_where="productno =$productno order by priority asc LIMIT 1";
+	  $productcolors_result = $obj->select_all_values('productcolors', $productcolors_where,'');
+	  foreach($productcolors_result as $productcolors_row){
+	   $productcolorsno = $productcolors_row["productcolorsno"];
+	   $colorname = $productcolors_row["colorname"];
+	   $colorcode = $productcolors_row["colorcode"];
+	  }
+	 $productimages_wherecondition = "productno =$productno and productcolorsno=$productcolorsno";
+	  $productimages_tcount1=$obj->totalrecords_condition('productimages', '*', $productimages_wherecondition);
+	  foreach($productimages_tcount1 as $productimages_row ){
+	   $productimages_tcount=$productimages_row['count(*)'];
+	  }
+	  if ($productimages_tcount<>0) { 
+		$productimages_where="productno=$productno and productcolorsno=$productcolorsno";
+		 $productimages_orderby="ORDER BY priority  asc LIMIT 1";
+		 $productimages_result = $obj->select_all_values('productimages', $productimages_where, $productimages_orderby);
+		 foreach($productimages_result as $productimages_row){
+		  $productimagesno =$productimages_row["productimagesno"];
+		 $ppimg=$productimages_row["pimg"];
+		 }
+	  }
+	 
+			
+		//######PRINT TD
+		//######PRINT TD
+	if($productno<>0){	
+	  $productrow_result2.= '<td style="background-color:#E9ECEF;border:none;width:20%;">
+   <a href="viewproduct.php?productno='.$productno.'&categoryno='.$categoryno.'&subcategoryno='.$subcategoryno.'&subcategory2no='.$subcategory2no.'&subcategory3no='.$subcategory3no.'&subcategory4no='.$subcategory4no.'&subcategory5no='.$subcategory5no.'&subcategory6no='.$subcategory6no.'&pname='.$pname.'&page='.$fname.'">			
+	<div class="col-12">
+	   <div class="card" >
+	    <div class="card-header bg-white pb-0" style="border-bottom:none;">
+		 <div class="row">
+		  <div class="col-9 p1-0 pt-0">
+		   <h4 class="tx-sm-13" style="color:#0866C6;font-size:14px;">'.$pname1.'</h4>';		   
+            $productrow_result2.= '<small class="text-muted">'.$pcode.'</small>'; 							
+	     $productrow_result2.= ' </div>
+	     </div>
+		 <hr>
+	    </div>
+		<div class="card-body pt-0">';
+		if ($productimages_tcount<>0) {  
+		  $productrow_result2.= '<div class="row"><img src="../productimages/'.$ppimg.'" class="img-fluid mx-auto" alt="'.$pname1.'"  title="'.$pname1.'"/></div>';
+	      } 
+		  $productrow_result2.= '<hr><div class="row orderbottom">
+		    <div class="col-3 "><i class="fas fa-receipt" title="View Product" ></i></div>
+		   
+		    <div class="col-9 text-right noproduct">';
+			$orders_wherecondition = "productno =$productno";
+			 $orders_tcount1=$obj->totalrecords_condition('orders', '*', $orders_wherecondition);
+			 foreach($orders_tcount1 as $orders_row ){
+			  $orders_tcount=$orders_row['count(*)'];
+			 } 
+			  if ($orders_tcount<>0) {
+		 $productrow_result2.= '<h6 class="tx-success tx-13 "> '.$orders_tcount.' people ordered this</h6>';
+		 }
+		 else  { 
+			$productrow_result2.= '<h6 class="tx-danger tx-13  ">No Orders</h6>';
+			 } 
+			$productrow_result2.= '</div>
+			</div>
+		   ';
+		$productrow_result2.= '</div>
+	   </div>
+	  </div>
+	  </a>
+	  </td>';
+	}
+	else
+	{
+		$productrow_result2.= '<td style="background-color:#E9ECEF;border:none;"></td>';
+	}
+	  //######PRINT TD
+	
+	  //######PRINT TD
+	 
+	  if($i % 5 == 0){
+	   $productrow_result.=$productrow_result2.'</tr>';
+	   $productrow_result2 = '';
+	  }
+	  $i++;
+	}
+	  $productrow_result.='</tbody></table>';
+	  echo $productrow_result;
+
+//#####################5 divs show#########################
+}
+?>
+</div>
+
+<?include ("ibottomdashboard.php")?>
+
+<style>
+.pnamec {word-wrap: break-word;word-break: break-all;}
+.orderbottom {
+    display: flex;
+    flex-wrap: inherit;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.noproduct{
+    flex: 0 0 53%!important;
+    max-width: 75%;
+}
+</style>

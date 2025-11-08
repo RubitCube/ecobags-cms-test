@@ -1,0 +1,109 @@
+<? include("dbobjects.php");
+$obj= new dboperation();
+$obj->connect(); 
+?>
+<?
+	$regionno = $_GET['regionno'];
+	$communityno = $_GET['communityno'];
+
+		$dealerselector1_dist="*";
+		$dealerselector_wheree="regionno ='$regionno' and communityno ='$communityno'";
+		$dealerselector_tcount= $obj->totalrecords_condition('dealerselector',$dealerselector1_dist, $dealerselector_wheree);
+		foreach($dealerselector_tcount as $dealerselector_row ){
+		$dealerselector_count=$dealerselector_row['count(*)'];
+		}
+
+	if($dealerselector_count<>0)
+	{
+		$where="regionno =$regionno and communityno =$communityno";
+		$result_dealerselector = $obj->select_all_values('dealerselector', $where,'');
+		foreach($result_dealerselector as $dealerselector_row)
+		{
+		 $dealerselectorno = $dealerselector_row['dealerselectorno'];
+		 $o_regionno = $dealerselector_row['regionno'];
+		 
+		$where="regionno =$regionno";
+		$result_region = $obj->select_all_values('region', $where,'');
+		foreach($result_region as $region_row)
+		{
+		 $region= $region_row['region'];
+		} 
+		$communityno = $dealerselector_row['communityno'];
+		if($communityno<>0){
+		$where="communityno=$communityno";
+		$result_community = $obj->select_all_values('community', $where,'');
+		foreach($result_community as $community_row)
+		{
+		 $communityname= $community_row['communityname'];
+		}
+		}
+		else{
+			$communityname="-";
+		}
+		 $dealername = $dealerselector_row['dealername'];
+		 $decompanyname = $dealerselector_row['companyname'];
+		 $address = $dealerselector_row["address"];
+		 $phone = $dealerselector_row['phone'];
+		 $email = $dealerselector_row["email"];
+		 $website = $dealerselector_row["website"];
+		 $location = $dealerselector_row["location"];
+		
+		
+		echo"<div class='col-12  col-sm-6  col-xl-4'>
+		 <div class='col-12 p-3 border-red-dotted my-4'>
+		  <address>
+		   <div class='col-12 fluid0 '>
+			<table width='100%'>
+			 
+			 <tr>
+			  <td  width='10%' colspan='3' class='txtpara pb-2'><h2 class='thead mb-0 redtxtcolr' style=''><b>".$dealername."</b></h2></td>
+			 </tr>
+			 <tr>
+			  <td  width='10%' colspan='3' class='txtpara pb-3'>".$address."</td>
+			 </tr>
+			 <tr>
+			  <td  width='10%' class='txtpara'>Region</td>
+			  <td width='5%' class='txtpara' >:</td>
+			  <td width='50%'class='txtpara'>".$region."</td>
+			 </tr>
+			 
+			 
+			 <tr>
+			  <td  width='10%' class='txtpara'>Community</td>
+			  <td width='5%' class='txtpara' >:</td>
+			  <td width='50%'class='txtpara'>".$communityname."</td>
+			 </tr>
+			 
+			 <tr>
+			  <td  width='10%' class='txtpara'>
+			  Tel.</td><td width='5%' class='txtpara' >:</td>
+			  <td width='50%'class='txtpara'>".$phone."</td>
+			 </tr>
+			 
+			 <tr>		  
+			  <td width='10%' class='txtpara'>Email</td><td width='5%' class='txtpara'>:</td>
+			  <td width='50%' ><a style='color:#656565;'class='txtpara' href='mailto:".$email."?subject=Enquiry from www.liftek-intl.com'>".$email."</a></td>
+			 </tr>
+			 
+			 <tr>
+			  <td  width='10%' class='txtpara'>
+			  Website</td><td width='5%' class='txtpara' >:</td>
+			  <td width='50%'class='txtpara'><a href='http://".$website."' target='_blank'>".$website."</a></td>
+			 </tr>
+			
+			</table>
+			<br>
+		   </div>		  
+		  </address>
+	    <div class='col-12 fluid0' id='qrcode'>
+       <iframe src='".$location."' width='100%' height='250' style='border:none; line-height: normal' allowfullscreen=''  ></iframe>
+      </div>
+	 </div>
+	 </div>";
+	}	
+	}
+	else{
+	echo"<div class='col-12  col-sm-6  col-xl-4' id='msgdealer'>No Active Dealers...</div>";	
+	}
+	
+?>

@@ -1,0 +1,128 @@
+<?
+/**********categoryno***************************/
+if(isset($_REQUEST["brandsno"]))
+{
+ $brandsno=$_REQUEST["brandsno"];
+ include("icallbrands.php");
+} 
+else 
+{	
+ $brandsno=0;
+}
+
+/**********subcategoryno***************************/
+/**********categoryno***************************/
+if(isset($_REQUEST["categoryno"]))
+{
+ $categoryno=$_REQUEST["categoryno"];
+ include("icallcategory.php");
+} 
+else 
+{	
+ $categoryno=0;
+}
+
+/**********subcategoryno***************************/
+if(isset($_REQUEST["subcategoryno"]))
+{
+ $subcategoryno=$_REQUEST["subcategoryno"];
+  if ($subcategoryno<>0)
+  {
+   include("icallsubcategory.php");
+  }
+  else 
+  {
+   $subcategoryno=0;
+  }
+} 
+else 
+{
+ $subcategoryno=0;
+}
+/**********subcategory2no***************************/
+if(isset($_REQUEST["subcategory2no"]))
+{
+ $subcategory2no=$_REQUEST["subcategory2no"];
+  if ($subcategory2no<>0)
+  {
+   include("icallsubcategory2.php");
+  }
+  else 
+  {
+   $subcategory2no=0;
+  }
+} 
+else 
+{
+ $subcategory2no=0;
+}
+/**********subcategory3no***************************/
+if(isset($_REQUEST["subcategory3no"]))
+{
+ $subcategory3no=$_REQUEST["subcategory3no"];
+  if ($subcategory3no<>0)
+  {
+   include("icallsubcategory3.php");
+  }
+  else 
+  {
+   $subcategory3no=0;
+  }
+} 
+else 
+{
+ $subcategory3no=0;
+}
+/**********subcategory4no***************************/
+if(isset($_REQUEST["subcategory4no"]))
+{
+ $subcategory4no=$_REQUEST["subcategory4no"];
+  if ($subcategory4no<>0)
+  {
+   include("icallsubcategory4.php");
+  }
+  else 
+  {
+   $subcategory4no=0;
+  }
+} 
+else 
+{
+ $subcategory4no=0;
+}
+/**********subcategory5no***************************/
+if(isset($_REQUEST["subcategory5no"]))
+{
+ $subcategory5no=$_REQUEST["subcategory5no"];
+  if ($subcategory5no<>0)
+  {
+   include("icallsubcategory5.php");
+  }
+  else 
+  {
+   $subcategory5no=0;
+  }
+} 
+else 
+{
+ $subcategory5no=0;
+}
+/**********subcategory6no***************************/
+if(isset($_REQUEST["subcategory6no"]))
+{
+ $subcategory6no=$_REQUEST["subcategory6no"];
+  if ($subcategory6no<>0)
+  {
+   include("icallsubcategory6.php");
+  }
+  else 
+  {
+   $subcategory6no=0;
+  }
+} 
+else 
+{
+ $subcategory6no=0;
+}
+/**********subcategory6no***************************/ 
+?>

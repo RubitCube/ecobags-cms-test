@@ -1,0 +1,15 @@
+<style>
+  .modal-header,  .close {
+      background-color: #ef464a;;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  .select2-container .select2-choice {
+    display: block;
+    width: 100%;
+	}
+  </style>

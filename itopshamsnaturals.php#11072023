@@ -1,0 +1,239 @@
+<!------- link desktop starts --------->
+<header id="header" class="header  nav-container d-none d-md-none d-lg-block">
+ <div class="container pb-3"> 
+  <div class="row">
+   <nav class="navbar bootsnav navbar-left pb-lg-0">
+    <div class="col-lg-2 col-xl-3 col-xxl-3 my-auto pt-2 pb-lg-0 pb-2">
+     <div class="navbar-header text-start px-3">
+      <button type="button" class="navbar-toggle navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"><span class="hidden">MENU</span> <i class="fas fa-bars"></i></button>
+	   
+      <?if ($fname<>"index.php") { ?><a class="navbar-brand" href="<?echo $mainurlindex;?>ShamsNaturals-Home" ><img src="<?echo $mainurlindex;?>img/shamsnaturals-logo.jpg" class="img-fluid    d-none d-md-none d-lg-block"></a><? } else { ?><img src="<?echo $mainurlindex;?>img/shamsnaturals-logo.jpg" class="img-fluid   d-none d-md-none d-lg-block"><? } ?>
+	   
+      <?if ($fname<>"index.php") { ?><a class="navbar-brand" href="<?echo $mainurlindex;?>ShamsNaturals-Home" ><img src="<?echo $mainurlindex;?>img/shamsnaturals-moblogo.jpg" class="img-fluid ps-5 d-block d-lg-none"></a><? } else { ?><img src="<?echo $mainurlindex;?>img/shamsnaturals-moblogo.jpg" class="img-fluid   pe-5 d-block d-lg-none"><? } ?>	  
+     </div>
+    </div>
+    <div class="col-lg-10 col-xl-9 col-xxl-9 my-auto pt-1 pt-lg-4  pb-lg-3 pb-2 ps-xxl-0">  
+	 <div class="navbox-collapse collapse ps-5 ps-lg-0 ps-xl-2 d-flex  float-end" id="navbar-menu" >
+	  <ul class="nav flex ps-xxl-0" data-in="fade-In-Down" data-out="fade-Out-Up">
+       <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>ShamsNaturals-Home">HOME</a>
+	   <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>ShamsNaturalsCompany-Profile">ABOUT US</a>
+       </li>
+       <li class="dropdown megamenu-fw">
+	    <a class="dropdown-toggle" data-toggle="dropdown">PRODUCTS</a>
+	    <ul class="dropdown-menu megamenu-content image-menu animated fade-Out-Up" role="menu">
+		
+		
+		<li>
+	      <div class="row mx-0 pb-3">
+		   <!------- category listing starts --------->
+		   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 px-0">
+		    <div class="row mx-0">
+			<?
+			$category_where="status='Active' and categoryno<>200 and categoryno<>210";
+			$category_orderby="ORDER BY priority ASC";
+			$category_result=$obj->select_all_values("category", $category_where, $category_orderby);
+			$count=0;
+			foreach($category_result as $category_row){ 
+			$count++;
+			$categoryno =$category_row["categoryno"];
+			$category =$category_row["categoryname"];
+			$categoryimg =$category_row["pimg"];
+			$cnamemask =$category_row["cnamemask"];
+			
+			$subcategory_wherecondition = "categoryno =$categoryno and status='Active'";
+			$subcategory_tcount1=$obj->totalrecords_condition('subcategory', '*', $subcategory_wherecondition);
+			foreach($subcategory_tcount1 as $subcategory_row )
+			{
+			 $subcategory_tcount = $subcategory_row['count(*)'];
+			}
+			?>	   
+			<?
+		   $productcategory_wherecondition = "categoryno =$categoryno  and subcategoryno=0 and pstatus='Active'";
+		   $productcategory_tcount1=$obj->totalrecords_condition('productcategory', '*', $productcategory_wherecondition);
+		   foreach($productcategory_tcount1 as $productcategory_row )
+		   {
+			 $productcategory_tcount = $productcategory_row['count(*)'];
+		   }
+		   ?> 
+		   <?if ($subcategory_tcount==0){ ?>
+		    <div class="col-menu col-sm-6 col-md-6 col-xl-6 pt-4 categoryboxbg px-0 px-xl-2 pe-2">
+		      <a href="<?echo $mainurlindex?>Products/<?echo $categoryno?>/0"><h4 class="tcategorylinkhead mb-0 pb-3"><?echo $category?></h4></a>
+		     </div>
+		   <?}?>
+           <?}?>
+			</div>
+		   </div>
+			
+           <!-- Natural products category--->			
+		   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 px-0">
+		    <div class="row mx-0"> 
+			<?
+			$category_where="status='Active' and categoryno=200";
+			$category_orderby="ORDER BY priority ASC";
+			$category_result=$obj->select_all_values("category", $category_where, $category_orderby);
+			$count=0;
+			foreach($category_result as $category_row){ 
+			$count++;
+			$categoryno =$category_row["categoryno"];
+			$category =$category_row["categoryname"];
+			$categoryimg =$category_row["pimg"];
+			$cnamemask =$category_row["cnamemask"];	 
+			$subcategory_wherecondition = "categoryno =$categoryno and status='Active'";
+			$subcategory_tcount1=$obj->totalrecords_condition('subcategory', '*', $subcategory_wherecondition);
+			foreach($subcategory_tcount1 as $subcategory_row )
+			{
+			 $subcategory_tcount = $subcategory_row['count(*)'];
+			}
+			?>	   
+			
+			 <div class="col-menu col-sm-6 col-md-6 col-xl-6 pt-4 categoryboxbg px-0 px-xl-2">
+			  <h4 class="tcategorylinkhead mb-0 pb-3" style="border-bottom:none;"><?echo $category?></h4>
+			  <?if ($subcategory_tcount<>0){ ?>
+			  <!-- sub category starts-->
+			   <?
+				$subcategory_where="categoryno=$categoryno and status='Active'";
+				$subcategory_orderby="ORDER BY subcategorypriority ASC";
+				$subcategory_result=$obj->select_all_values("subcategory", $subcategory_where, $subcategory_orderby);
+				$count=0;
+				foreach($subcategory_result as $subcategory_row){ 
+				 $count++;
+				 $subcategoryno =$subcategory_row["subcategoryno"];
+				 $subcategory =$subcategory_row["subcategory"];
+				?>				
+			     <p class="tsubcategorylinkhead pb-1"><i class="fa fa-angle-right pe-2" aria-hidden="true"></i><?echo $subcategory?></p>
+			  <?}?> 
+			  <?}?>
+			  <?}?>
+			   <div class="row pt-2">
+			    <div class="col-7 text-center">
+			    <a href="https://hostdxb.com/demo/joolood10/" target="_blank"><img src="<?echo $mainurlindex?>img/joolood-logo.svg" class="img-fluid"></a>
+			    </div>
+			   </div>
+		     </div>
+			 </div>
+		    </div>
+			<!-- Natural products category--->
+
+		    </div>	      
+	       </li>
+		   
+	    </ul>
+	   </li>
+	   <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>NewarrivalProducts">NEW ARRIVALS</a>
+       </li>
+	   <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>DealerSelector">DEALER SELECTOR</a>
+       </li>
+	   <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>ContactShamsNaturals" style="padding-right:10px!important;">CONTACT</a>
+       </li>
+	  </ul>
+	 </div>
+    </div>
+   </nav>
+  </div>   
+ </div>
+</header>
+<!------- link desktop ends --------->
+
+<!------- link mobile starts --------->
+<header id="header" class="header nav-container d-block d-lg-none">
+ <div class="container-fluid"> 
+  <div class="row">
+   <div class="col-lg-12 my-auto pt-1 pb-lg-5 pb-2 px-0">
+    <nav class="navbar bootsnav navbar-left pb-lg-3">
+	
+     <div class="navbar-header text-start px-3">
+      <button type="button" class="navbar-toggle navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"><span class="hidden">MENU</span> <i class="fas fa-bars"></i></button>
+	   
+      <?if ($fname<>"index.php") { ?><a class="navbar-brand" href="<?echo $mainurlindex;?>ShamsNaturals-Home" ><img src="<?echo $mainurlindex;?>img/shamsnaturals-logo.jpg" class="img-fluid logotop  logotop d-none d-md-none d-lg-block"></a><? } else { ?><img src="<?echo $mainurlindex;?>img/shamsnaturals-logo.jpg" class="img-fluid  d-none d-md-none d-lg-block"><? } ?>
+	   
+      <?if ($fname<>"index.php") { ?><a class="navbar-brand" href="<?echo $mainurlindex;?>ShamsNaturals-Home" ><img src="<?echo $mainurlindex;?>img/shamsnaturals-moblogo.jpg" class="img-fluid    d-block d-lg-none  ms-3 pb-4"></a><? } else { ?><img src="<?echo $mainurlindex;?>img/shamsnaturals-moblogo.jpg" class="img-fluid d-block d-lg-none ms-5"><? } ?>	  
+     </div>
+	  
+     <div class="navbox-collapse collapse ms-auto" id="navbar-menu" style="margin-right: 0!important;">
+      <ul class="nav flex justify-end" data-in="fade-In-Down" data-out="fade-Out-Up">
+       <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>ShamsNaturals-Home">Home</a>
+       </li>
+	   
+       <li class="dropdown megamenu-fw">
+	    <a href="<?echo $mainurlindex;?>ShamsNaturalsCompany-Profile">About Us</a>
+	   </li>
+	   
+	  <li class="dropdown megamenu-fw">
+	    <a href="" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+	    <ul class="dropdown-menu megamenu-content image-menu animated fade-Out-Up" role="menu">
+	     <li>
+	      <div class="row mx-0"> 
+		   <!------- category listing starts --------->
+		   <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 px-0">
+		    <div class="row mx-0">
+		     <div class="col-menu col-sm-12 col-md-6 col-lg-4 categoryboxbg ps-0">
+			 
+		      <!------- menu starts ------>
+				<?
+				$category_where="status='Active' and categoryno<>210";
+				$category_orderby="ORDER BY priority ASC";
+				$category_result=$obj->select_all_values("category", $category_where, $category_orderby);
+				$count=0;
+				foreach($category_result as $category_row){ 
+				$count++;
+				$categoryno =$category_row["categoryno"];
+				$category =$category_row["categoryname"];
+				$categoryimg =$category_row["pimg"];
+				$cnamemask =$category_row["cnamemask"];	 
+				$subcategory_wherecondition = "categoryno =$categoryno and status='Active'";
+				$subcategory_tcount1=$obj->totalrecords_condition('subcategory', '*', $subcategory_wherecondition);
+				foreach($subcategory_tcount1 as $subcategory_row )
+				{
+				 $subcategory_tcount = $subcategory_row['count(*)'];
+				}
+				?>	   
+				<?if ($subcategory_tcount==0){?>
+				<a href="<?echo $mainurlindex?>Products/<?echo $categoryno?>/0">
+			      <h4 class="tcategorylinkhead mb-0 pb-3"><i class="fa fa-angle-right pe-2" aria-hidden="true"></i><?echo $category?></h4>
+			    </a>
+				<?}else{?>
+				<a href="<?echo $mainurlindex?>SubProducts/<?echo $categoryno?>/<?echo $subcategoryno?>">
+			      <h4 class="tcategorylinkhead mb-0 pb-3"><i class="fa fa-angle-right pe-2" aria-hidden="true"></i><?echo $category?></h4>
+			    </a>
+				<?}?>
+				<?}?>
+			  <!------- menu ends ------>
+	
+			  <div class="row pt-2">
+			   <div class="col-7 text-center pb-4">
+			    <a href="https://hostdxb.com/demo/joolood10/" target="_blank"><img src="<?echo $mainurlindex?>img/joolood-logo.svg" class="img-fluid"></a>
+			   </div>
+			  </div>
+			  
+		     </div>
+		    </div>
+		   </div>
+		   <!------- category listing ends --------->
+	      </div>	      
+	     </li>
+	    </ul>
+	   </li>
+	   
+	   <li class="dropdown megamenu-fw">
+        <a href="<?echo $mainurlindex;?>NewarrivalProducts">New Arrivals</a>
+       </li>
+	   <li class="dropdown megamenu-fw">
+        <a href="<?echo $mainurlindex;?>DealerSelector">Dealer Selector</a>
+       </li>
+       <li class="dropdown megamenu-fw">
+        <a href="<?echo $mainurlindex;?>ContactShamsNaturals">Contact</a>
+       </li>
+      </ul>
+     </div>
+    </nav>	 
+   </div>   
+  </div>
+ </div>
+</header>
+<!------- link mobile ends --------->

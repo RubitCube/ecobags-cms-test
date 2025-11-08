@@ -1,0 +1,125 @@
+<!-----Ajax community------------------------------------------------>
+<script type="text/javascript">
+var xmlHttp // xmlHttp variable
+function GetXmlHttpObject()
+{
+	// This function we will use to call our xmlhttpobject.
+	var objXMLHttp=null // Sets objXMLHttp to null as default.
+	if (window.XMLHttpRequest) {
+	// If we are using Netscape or any other browser than IE lets use xmlhttp.
+	objXMLHttp=new XMLHttpRequest() // Creates a xmlhttp request.
+	} else if (window.ActiveXObject) {
+	// ElseIf we are using IE lets use Active X.
+	objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP") // Creates a new Active X Object.
+	} // End ElseIf.
+	return objXMLHttp // Returns the xhttp object.
+} // Close Function
+
+$(document).ready(function() {
+	$("#div_community_dynamic").hide();
+	 $("#div_community_dynamic_mobile").hide();
+ });
+
+function showcommunity()
+{
+	var regionno = document.getElementById('region').value;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	var resultcommunity=this.responseText;
+	$("#div_community").hide();
+	document.getElementById('div_community_dynamic').innerHTML=resultcommunity;
+	$("#div_community_dynamic").show();
+	var o_communityno = document.getElementById('o_communityno').value;
+	if(o_communityno==0){
+	 showdealer();
+	}
+	if(o_communityno!=0){
+	 document.getElementById("msgdealer").innerHTML = "";
+	 document.getElementById("addresscontact").innerHTML = "";
+	}
+	 
+	}
+	};
+	xmlhttp.open("GET","ajaxcommunity.php?regionno="+regionno,true);
+	xmlhttp.send();
+	return true;
+}
+function showdealer()
+{
+	var regionno = document.getElementById('region').value;
+	var communityno = document.getElementById('communityno').value;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	var resultcommunity=this.responseText;
+	document.getElementById('addresscontact').innerHTML=resultcommunity;
+	}
+	};
+	xmlhttp.open("GET","ajaxdealerselector.php?regionno="+regionno+"&communityno="+communityno,true);
+	xmlhttp.send();
+	return true;
+}
+</script>
+<style>
+.border-red-dotted {
+    border: 1px dotted #417137;
+}
+</style>
+<!-----Ajax community------------------------------------------------>
+ <div class="mx-0 pl-3">
+  <form class="form-horizontal " role="form" autocomplete="off" action="dealerselector.php" method="post" name="myform" enctype="multipart/form-data" onsubmit="return(validate());">
+	 
+  <div class="row">	
+   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+    <!--<p class="ttexthead pb-2  px-1 mx-0 mb-0"><strong>Leave Your Message</strong></p>-->
+    <!--<p class="ttext py-1  px-1 mx-0">If you have any questions about the services we provide simply use the form below. <br>We try and respond to all queries and comments within 24 hours.</p>-->
+   </div>
+  </div>
+  <div class="row px-0 py-2">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 mb-0 mx-0 pb-4">	
+    <!--<select name="region" id="region"  class="form-select form-control tinputborder pb-2" style="padding: 13px;" onchange="showcommunity();">-->
+    <select name="region" id="region"  class="form-select form-control tinputborder" style="padding: 13px;" onchange="showcommunity();">
+    <option value="0" selected>Select Region <i class='bx bx-chevron-down' ></i></option>
+    <?
+	$orderby="where status='Active'";
+	$result=$obj->select_table_orderby("region",$orderby);
+	$count=0;
+	foreach($result as $row){ 
+	$count++;
+	$regionno =$row["regionno"];
+	$region =$row["region"];
+	?>
+	<option value="<?echo $regionno?>"><?echo $region?></option>
+	<? } ?>
+    </select>
+   </div>
+  
+   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 mb-0 mx-0 pb-2">
+    <div class="form-group mx-0 px-0 pb-4 mx-0">	
+     <!---------------Display first view---------------------------------->
+	   <div class="col my-auto py-2 py-lg-0" id="div_community">   
+		<select class="form-select form-control tinputborder" style="padding: 13px;"  id="communityno1" >
+		  <option value="0" selected="true" disabled="true">Select Community</option>	
+		</select>
+	   </div>
+     <!---------------Display first view---------------------------------->
+     <!---------------Dynamic  view---------------------------------->
+	 <div class="col my-auto py-2 py-lg-0" id="div_community_dynamic">  
+   
+     </div>
+	<!---------------Dynamic  view---------------------------------->
+    </div>
+   </div>
+   </div>
+
+    <div class="row mx-0 px-0 mt-4" id="addresscontact">
+	  <!-----------------++++++++++++++++++++++++------------------------------------------------------->
+		
+	 <!----------------+++++++++++++++++++++++++----------------------------------------------------------->    
+   </div>
+   
+   
+
+  </form>
+ </div>

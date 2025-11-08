@@ -1,0 +1,29 @@
+<?include("iconnect.php")?>
+<? 
+$page=$_POST["page"];
+$pname=$_POST["pname"];
+$brandsno=$_POST["brandsno"];
+$categoryno=$_POST["categoryno"];
+$subcategoryno=$_POST["subcategoryno"];
+$subcategory2no=$_POST["subcategory2no"];
+$subcategory3no=$_POST["subcategory3no"];
+$subcategory4no=$_POST["subcategory4no"];
+$subcategory5no=$_POST["subcategory5no"];
+$subcategory6no=$_POST["subcategory6no"];
+$productno = trim($_POST["productno"]);
+ 
+/*----------------------------------------product description starts----------------------------------------*/	
+$shortdesc1 = $_POST['shortdesc1'];
+if($shortdesc1<>"") {
+ $shortdesc1 = $_POST['shortdesc1'];
+ $shortdesc1=str_replace("'","&#39;",$shortdesc1);
+ $productshortdesc_fields140="productshortdescno, productno, shortdesc1, addedby, addeddate";
+$productshortdesc_values140="'0', '$productno', '$shortdesc1', '$addedbydbsave', '$addeddatesave'"; 
+ $productshortdesc_result140=$obj->insert("productshortdesc", $productshortdesc_fields140, $productshortdesc_values140);
+}
+/*----------------------------------------product description ends----------------------------------------*/	
+
+header("Location:viewproduct.php?productno=$productno&brandsno=$brandsno&categoryno=$categoryno&subcategoryno=$subcategoryno&subcategory2no=$subcategory2no&subcategory3no=$subcategory3no&subcategory4no=$subcategory4no&subcategory5no=$subcategory5no&subcategory6no=$subcategory6no&action=added&plink=direct&page=$page&pname=$pname");	
+
+ob_flush();
+?>

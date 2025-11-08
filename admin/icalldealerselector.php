@@ -1,0 +1,1 @@
+<?$masterwhere="dealerselectorno =$dealerselectorno";$masterresult_dealerselector= $obj->select_all_values('dealerselector', $masterwhere,'');foreach($masterresult_dealerselector as $masterrow_dealerselector){		$master_dealername = $masterrow_dealerselector['dealername'];}?>

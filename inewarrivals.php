@@ -1,0 +1,150 @@
+<?
+$newarrivals_sql="SELECT distinct (productcategory.productno) FROM productcategory INNER JOIN productdetails ON productcategory.productno = productdetails.productno WHERE productdetails.newarrivals='Yes' and productcategory.pstatus='Active' and productdetails.status='Active'";
+$newarrivals_sql_countresult2=$obj->execute($newarrivals_sql);
+$newarrivals_tcount=$newarrivals_sql_countresult2->rowCount();
+?>
+<?if($newarrivals_tcount>0){?> 
+<script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
+<!--------------- our new arrivals heading start --------------->   
+<div class="container-fluid fluid0">
+ <div class="container py-xl-3 pt-4 pt-lg-2 pb-1 pb-lg-0"> 
+  <div class="row mx-0 pt-md-4 pt-lg-5 pb-lg-3">
+   <div class="col-12 text-center px-0">
+   <h2 class="tourproductshead mb-0">NEW ARRIVALS</h2> 
+   </div>
+  </div>
+ </div>
+</div>
+<!--------------- our new arrivals heading ends ---------------> 
+<!------------- new arrivals starts ------------->
+<div class="container-fluid fluid0 pb-4 pb-lg-5">
+ <div class="container py-4">
+ <div class="container-fluid fluid0">
+ <div class="container py-lg-4">
+  <div class="row multiple-items"> 
+   <?
+   	$productcategory_sql="SELECT distinct (productcategory.productno) FROM productcategory INNER JOIN productdetails ON productcategory.productno = productdetails.productno WHERE productdetails.newarrivals='Yes' and productcategory.pstatus='Active' and productdetails.status='Active' ORDER BY  RAND()  LIMIT 5";
+    $productcategory_sql_countresult2=$obj->execute($productcategory_sql);
+	 foreach($productcategory_sql_countresult2 as $productdetails_row){ 
+	  $productno =$productdetails_row["productno"]; 
+	  
+	  /*++++++++++++  productdetails starts+++++++++++++++++++++++++*/
+	  $productdetails_where="productno =$productno  and status='Active'  order by `priority` asc LIMIT 1";
+	  $productdetails_result = $obj->select_all_values('productdetails', $productdetails_where,'');
+	  foreach($productdetails_result as $productdetails_row){
+		$productdetailsno  = $productdetails_row["productdetailsno"]; 
+		$productcode  = $productdetails_row["productcode"]; 
+		$dimension  = $productdetails_row["dimension"]; 
+		$materials  = $productdetails_row["materials"]; 
+		$productcolor  = $productdetails_row["productcolor"];
+	  }
+	 /*++++++++++++  productdetails starts+++++++++++++++++++++++++*/
+	 
+    $productimages_wherecondition = "productno =$productno";
+	$productimages_tcount1=$obj->totalrecords_condition('productimages', '*', $productimages_wherecondition);
+	foreach($productimages_tcount1 as $productimages_row ){
+	   $productimages_tcount=$productimages_row['count(*)'];
+	}
+	if ($productimages_tcount<>0) { 
+		$productimages_where="productno=$productno";
+		 $productimages_orderby="ORDER BY priority  asc LIMIT 1";
+		 $productimages_result = $obj->select_all_values('productimages', $productimages_where, $productimages_orderby);
+		 foreach($productimages_result as $productimages_row){
+		  $productimagesno =$productimages_row["productimagesno"];
+		  $pimg=$productimages_row["pimg"];
+		 }
+	}
+   ?>
+   <!-------------- products starts -------------->
+   <!-------------- card box 1 starts -------------->
+   <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 boxpadding px-2">
+    <a href="<?echo $mainurlindex;?>Productdetails/<?echo $productno?>">
+    <div class="card">	
+   <!--pimg starts--->
+	 <? if ($productimages_tcount<>0) { ?>
+	 <div class="card-header pb-1">	 
+	  <div class="figure">	 
+	   <img class="Sirv image-main" src="<?echo $mainurlindex;?>productimages/<?echo $pimg;?>" data-src="<?echo $mainurlindex;?>productimages/<?echo $pimg;?>">
+	    <?
+		 $productimages_where="productno=$productno";
+		 $productimages_orderby="ORDER BY priority  desc LIMIT 1";
+		 $productimages_result = $obj->select_all_values('productimages', $productimages_where, $productimages_orderby);
+		 foreach($productimages_result as $productimages_row){
+		  $productimagesno =$productimages_row["productimagesno"];
+		  $pimg2=$productimages_row["pimg"];
+		?>
+	   <img class="Sirv image-hover" data-src="<?echo $mainurlindex;?>productimages/<?echo $pimg2;?>"><? } ?> 
+	   <? } ?>
+	  </div>
+	 </div>
+	 <!--pimg ends--->
+	 <? if ($productcode<>"") { ?>	 	 
+	 <div class="card-body cardline">
+	  <h4 class="mb-0 tproducthead py-2">Code : <?echo $productcode;?> </h4>	
+	 </div>
+	  <? } ?>
+	 <div class="card-footer ">
+	  <div class="row mx-0 px-0 pt-1">	  
+	   <p class="mb-0 tproductmore py-3">View Details</p>
+	  </div>
+	 </div>
+    </div>
+	</a>
+   </div>
+   <!-------------- card box 1 ends -------------->    
+   <!-------------- products ends -------------->
+   <?}?>     
+   </div>
+   </div>
+  </div>
+  <div class="row pb-xl-4 pb-lg-3 pb-md-3">
+   <div class="col-12 text-center pb-lg-2 ">
+	<div class="round">
+	 <a class="viewmorebtn" href="<?echo $mainurlindex;?>NewarrivalProducts">VIEW MORE</a>
+    </div>
+   </div>
+  </div>
+  <!--<div style="background-color: rgb(202, 201, 196);padding: 20px;">
+        <h1 style="padding-left: 200px;">EVENTS</h1>
+        <div class="events" style="display: flex;gap: 100px;padding-left: 200px;">
+        <div class="event">
+            <img src="https://images.pexels.com/photos/2608512/pexels-photo-2608512.jpeg" alt="" width="300px" height="300px">
+            <h2>Events Name and place hold- <br>ing text</h2>
+        </div>
+        <div class="event">
+            <img src="https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg" alt="" width="300px" height="300px">
+            <h2>Events Name and place hold- <br>ing text</h2>
+        </div>
+        <div class="event">
+            <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg" alt="" width="300px" height="300px">
+            <h2>Events Name and place hold- <br>ing text</h2>
+        </div>
+    </div>
+    <button class="view-btn">EXPLORE ALL >></button>    
+    </div>
+    
+    <div class="map">
+       <h1 style="text-align: center;">Dealers World Map</h1>
+    </div>
+ </div>-->
+</div>
+<!------------- new arrivals ends ------------->
+<?}?>
+<script>
+ $('.multiple-items').slick({
+  dots: false,
+  infinite: true,
+  arrows: true,
+  autoplay: true,
+  autoplaySpeed: 1999,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  responsive: [
+   { breakpoint: 1441, settings: { slidesToShow: 3 } },
+   { breakpoint: 992, settings: { slidesToShow: 2 } },
+   { breakpoint: 768, settings: { slidesToShow: 1 } }, 
+   { breakpoint: 400, settings: { slidesToShow: 1 } }
+  ]
+});
+</script>

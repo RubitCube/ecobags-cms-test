@@ -1,0 +1,1 @@
+<?$masterwhere="regionno =$regionno";$masterresult_region= $obj->select_all_values('region', $masterwhere,'');foreach($masterresult_region as $masterrow_region){			$region = $masterrow_region['region'];}?>

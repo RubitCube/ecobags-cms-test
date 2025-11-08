@@ -1,0 +1,198 @@
+[16-Aug-2024 04:20:37 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home1/themijok/shamsnaturals.com/dbobjects.php:36
+Stack trace:
+#0 /home1/themijok/shamsnaturals.com/dbobjects.php(129): dboperation->execute('select count(*)...')
+#1 /home1/themijok/shamsnaturals.com/ajaxcommunity.php(10): dboperation->totalrecords_condition('community', '*', 'regionno ='110'...')
+#2 {main}
+  thrown in /home1/themijok/shamsnaturals.com/dbobjects.php on line 36
+[17-Oct-2024 06:26:53 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Oct-2024 19:46:22 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[31-Oct-2024 13:22:37 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Nov-2024 10:13:07 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Nov-2024 11:56:02 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[03-Nov-2024 22:15:30 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[04-Nov-2024 22:12:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[05-Nov-2024 06:44:01 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Nov-2024 18:38:23 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Nov-2024 09:55:51 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Nov-2024 12:59:00 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Nov-2024 18:09:38 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Nov-2024 18:10:53 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Nov-2024 11:33:05 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Nov-2024 23:30:47 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[14-Nov-2024 11:05:46 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[14-Nov-2024 20:46:47 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[15-Nov-2024 16:58:33 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[16-Nov-2024 18:08:36 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Nov-2024 07:25:55 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Nov-2024 19:19:38 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[20-Nov-2024 18:43:54 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[20-Nov-2024 23:07:23 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[21-Nov-2024 08:14:07 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[21-Nov-2024 09:43:34 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Nov-2024 21:26:21 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Nov-2024 04:19:47 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[28-Nov-2024 08:56:04 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[28-Nov-2024 19:47:29 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[28-Nov-2024 22:46:30 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[29-Nov-2024 02:20:27 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[29-Nov-2024 02:21:24 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[29-Nov-2024 09:51:14 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 01:04:14 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 01:55:19 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 01:56:40 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 13:12:01 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 18:30:56 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Nov-2024 20:26:30 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[01-Dec-2024 14:47:35 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[01-Dec-2024 21:27:34 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[01-Dec-2024 21:28:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Dec-2024 04:46:58 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Dec-2024 20:01:31 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Dec-2024 20:02:05 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[03-Dec-2024 11:05:43 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[03-Dec-2024 11:07:06 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[04-Dec-2024 10:02:41 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[07-Dec-2024 09:43:56 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[07-Dec-2024 09:45:06 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Dec-2024 10:01:51 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Dec-2024 10:04:16 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Dec-2024 19:14:04 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[17-Dec-2024 04:21:45 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[17-Dec-2024 04:22:45 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[17-Dec-2024 11:41:15 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Dec-2024 18:49:43 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[26-Dec-2024 09:30:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Dec-2024 09:26:04 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Dec-2024 23:26:33 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[28-Dec-2024 22:35:31 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[29-Dec-2024 10:50:42 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[30-Dec-2024 20:48:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Jan-2025 04:23:51 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[03-Jan-2025 09:29:05 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[03-Jan-2025 23:59:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[12-Jan-2025 11:25:17 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[23-Jan-2025 23:15:19 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Jan-2025 00:23:01 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[29-Jan-2025 00:59:00 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Feb-2025 03:13:19 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Feb-2025 03:17:11 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Feb-2025 09:25:17 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Feb-2025 23:56:30 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Feb-2025 06:42:35 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Feb-2025 11:41:16 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[12-Feb-2025 19:33:21 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Feb-2025 22:51:00 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[20-Feb-2025 22:46:42 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[21-Feb-2025 18:52:14 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Feb-2025 18:18:57 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[24-Feb-2025 13:02:56 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[25-Feb-2025 10:09:30 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[26-Feb-2025 11:00:38 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[06-Mar-2025 07:44:47 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[06-Mar-2025 09:09:37 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[06-Mar-2025 22:26:55 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[07-Mar-2025 02:55:04 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[07-Mar-2025 08:59:47 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Mar-2025 03:02:13 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Mar-2025 20:44:27 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Mar-2025 09:41:29 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Mar-2025 03:03:02 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[13-Mar-2025 14:32:45 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[16-Mar-2025 12:55:37 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Mar-2025 03:17:39 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Mar-2025 07:49:16 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Mar-2025 08:13:28 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[18-Mar-2025 10:15:21 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[20-Mar-2025 00:49:22 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Mar-2025 08:19:06 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Mar-2025 10:36:24 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[22-Mar-2025 17:02:42 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[23-Mar-2025 06:07:12 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[23-Mar-2025 07:31:58 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[23-Mar-2025 07:32:38 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[26-Mar-2025 22:20:53 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Mar-2025 22:17:45 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Mar-2025 22:17:45 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[02-Apr-2025 12:26:50 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Apr-2025 00:14:54 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Apr-2025 19:55:49 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[09-Apr-2025 09:02:13 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Apr-2025 03:45:15 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[11-Apr-2025 01:11:52 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[16-Apr-2025 06:16:04 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[04-Jun-2025 18:25:19 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[10-Jun-2025 21:16:26 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[14-Jun-2025 14:32:32 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[27-Jun-2025 22:57:20 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[05-Jul-2025 16:14:43 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[06-Jul-2025 03:17:21 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Jul-2025 06:20:08 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home1/themijok/shamsnaturals.com/dbobjects.php:8
+Stack trace:
+#0 /home1/themijok/shamsnaturals.com/dbobjects.php(8): mysqli->__construct('localhost', 'themijok_shamsn...', Object(SensitiveParameterValue))
+#1 /home1/themijok/shamsnaturals.com/ajaxdealerselector.php(1): include('/home1/themijok...')
+#2 {main}
+  thrown in /home1/themijok/shamsnaturals.com/dbobjects.php on line 8
+[12-Jul-2025 13:46:49 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[16-Jul-2025 06:07:24 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:30 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:30 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:32 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:33 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:35 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:44 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[16-Jul-2025 06:07:48 America/Chicago] PHP Parse error:  syntax error, unexpected token "|" in /home1/themijok/shamsnaturals.com/itophead.php on line 8
+[07-Aug-2025 20:03:25 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Aug-2025 06:43:51 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[08-Aug-2025 16:19:21 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[15-Oct-2025 22:08:05 America/Chicago] PHP Warning:  Undefined variable $body in /home1/themijok/shamsnaturals.com/test.php on line 17
+[31-Oct-2025 00:31:25 America/Chicago] PHP Warning:  Undefined variable $body in /home1/shamsgiz/shamsnaturals.com/test.php on line 17
+[31-Oct-2025 00:52:20 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_dealeruser'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_dealer...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 00:53:02 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_dealeruser'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_dealer...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:03:46 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_dealeruser'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_dealer...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:40:27 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_dealer'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_dealer', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:43:32 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturalweb'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:52:00 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturals_website'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:52:00 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturals_website'@'162.241.123.54' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('162.241.123.54', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 01:58:18 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturals_website'@'localhost' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('localhost', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 02:37:46 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturals_website'@'localhost' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('localhost', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8
+[31-Oct-2025 03:02:49 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'shamzgiz_shamsnaturalweb'@'localhost' (using password: YES) in /home1/shamsgiz/shamsnaturals.com/supportdb.php:8
+Stack trace:
+#0 /home1/shamsgiz/shamsnaturals.com/supportdb.php(8): mysqli->__construct('localhost', 'shamzgiz_shamsn...', Object(SensitiveParameterValue))
+#1 {main}
+  thrown in /home1/shamsgiz/shamsnaturals.com/supportdb.php on line 8

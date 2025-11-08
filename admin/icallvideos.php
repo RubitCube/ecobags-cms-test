@@ -1,0 +1,1 @@
+<?$masterwhere="videosno =$videosno";$masterresult_videos= $obj->select_all_values('videos', $masterwhere,'');foreach($masterresult_videos as $masterrow_videos){			$videotitle = $masterrow_videos['videotitle'];}?>
